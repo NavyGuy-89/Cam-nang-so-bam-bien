@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>Cẩm nang số – Vươn khơi, bám biển | Lữ đoàn 189</title>
+<meta name="description" content="Hải văn thực chiều, pháp luật IUU và liên hệ khẩn cấp cho ngư dân – Lữ đoàn 189 Hải quân"/>
+<link rel="manifest" href="data:application/json;charset=utf-8,%7B%22name%22%3A%22C%E1%BA%A9m%20nang%20s%E1%BB%91%20-%20V%C6%B0%C6%A1n%20kh%C6%A1i%20b%C3%A1m%20bi%E1%BB%83n%22%2C%22short_name%22%3A%22C%E1%BA%A9m%20nang%20s%E1%BB%91%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%230b1e3d%22%2C%22theme_color%22%3A%22%230b1e3d%22%2C%22orientation%22%3A%22portrait%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22data%3Aimage%2Fsvg%2Bxml%3Bcharset%3Dutf-8%2C%253Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2044%2044'%253E%253Ccircle%20cx%3D'22'%20cy%3D'22'%20r%3D'22'%20fill%3D'%2523163364'%2F%253E%253Cpath%20d%3D'M8%2028Q14%2020%2022%2024Q30%2028%2036%2020'%20stroke%3D'%2523c8962a'%20stroke-width%3D'2.5'%20fill%3D'none'%20stroke-linecap%3D'round'%2F%253E%253Cpath%20d%3D'M22%208L22%2020M16%2014L22%208L28%2014'%20stroke%3D'%2523f0c050'%20stroke-width%3D'2'%20stroke-linecap%3D'round'%20stroke-linejoin%3D'round'%2F%253E%253Ccircle%20cx%3D'22'%20cy%3D'22'%20r%3D'3'%20fill%3D'%2523f0c050'%2F%253E%253C%2Fsvg%253E%22%2C%22sizes%22%3A%22192x192%22%2C%22type%22%3A%22image%2Fsvg%2Bxml%22%7D%5D%7D"/>
+<meta name="theme-color" content="#0b1e3d"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-title" content="Cẩm nang số"/>
+<link rel="apple-touch-icon" href="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Ccircle cx='22' cy='22' r='22' fill='%23163364'/%3E%3Cpath d='M8 28Q14 20 22 24Q30 28 36 20' stroke='%23c8962a' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3Cpath d='M22 8L22 20M16 14L22 8L28 14' stroke='%23f0c050' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='22' cy='22' r='3' fill='%23f0c050'/%3E%3C/svg%3E"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<style>
+/* ═══════════════════════════
+   RESET & VARIABLES
+═══════════════════════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0b1e3d; --navy2:#163364; --ocean:#1557a0; --sky:#2d87d0;
+  --gold:#c8962a; --gold2:#f0c050;
+  --bg:#f0f4f8; --white:#fff; --text:#1a2640; --muted:#5a6a82;
+  --green:#1a7a4a; --red:#c0392b; --warn:#b07500;
+  --border:#dde4ed; --shadow:0 2px 14px rgba(11,30,61,.08);
+  --r:14px; --safe-bottom:env(safe-area-inset-bottom,0px)
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Be Vietnam Pro',sans-serif;
+  background:var(--bg); color:var(--text);
+  font-size:16px; line-height:1.6;
+  padding-bottom:calc(72px + var(--safe-bottom))
+}
+
+/* ═══════════════════════════
+   OFFLINE / INSTALL BANNERS
+═══════════════════════════ */
+#offline-bar{
+  display:none;position:fixed;top:0;left:0;right:0;z-index:999;
+  background:#c0392b;color:#fff;text-align:center;
+  padding:8px 16px;font-size:13px;font-weight:600
+}
+body.offline #offline-bar{display:block}
+body.offline header{top:36px}
+
+#install-bar{
+  display:none;background:var(--navy2);color:#fff;
+  padding:10px 16px;align-items:center;gap:10px;flex-wrap:wrap
+}
+#install-bar.show{display:flex}
+#install-bar p{flex:1;font-size:13px}
+.install-btn-yes{
+  background:var(--gold);color:var(--navy);border:none;
+  padding:6px 16px;border-radius:20px;font-size:12px;
+  font-weight:700;cursor:pointer;font-family:inherit
+}
+#install-close{
+  background:none;border:none;color:rgba(255,255,255,.6);
+  cursor:pointer;font-size:20px;padding:0 4px;line-height:1
+}
+
+/* ═══════════════════════════
+   HEADER
+═══════════════════════════ */
+header{
+  background:var(--navy);color:#fff;
+  position:sticky;top:0;z-index:100;
+  box-shadow:0 2px 16px rgba(0,0,0,.3)
+}
+.hdr{
+  max-width:860px;margin:0 auto;
+  padding:10px 16px;
+  display:flex;align-items:center;justify-content:space-between;gap:8px
+}
+.hdr-left{display:flex;align-items:center;gap:10px}
+.hdr-icon{width:40px;height:40px;flex-shrink:0}
+.hdr-title{font-size:17px;font-weight:700;color:var(--gold2);line-height:1.2}
+.hdr-sub{font-size:10px;color:rgba(255,255,255,.5);letter-spacing:.04em}
+.hdr-right{display:flex;align-items:center;gap:8px}
+.status-dot{width:8px;height:8px;border-radius:50%;background:#2ecc71}
+body.offline .status-dot{background:#e74c3c}
+#last-update{font-size:10px;color:rgba(255,255,255,.5)}
+.refresh-btn{
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);
+  color:#fff;width:32px;height:32px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;font-size:16px;transition:.2s
+}
+.refresh-btn:hover{background:rgba(255,255,255,.2)}
+.refresh-btn.spin{animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ═══════════════════════════
+   BOTTOM NAV
+═══════════════════════════ */
+.bnav{
+  position:fixed;bottom:0;left:0;right:0;
+  background:var(--navy);border-top:1px solid rgba(255,255,255,.1);
+  z-index:100;padding-bottom:var(--safe-bottom);
+  display:flex
+}
+.bnav-item{
+  flex:1;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  padding:8px 4px 6px;cursor:pointer;
+  color:rgba(255,255,255,.5);font-size:10px;font-weight:500;
+  gap:3px;transition:.15s;border:none;background:none;
+  -webkit-tap-highlight-color:transparent
+}
+.bnav-item svg{width:22px;height:22px;stroke-width:1.8}
+.bnav-item.active{color:var(--gold2)}
+.bnav-pip{
+  display:inline-block;width:4px;height:4px;border-radius:50%;
+  background:var(--gold2);margin-top:1px;
+  opacity:0;transition:.15s
+}
+.bnav-item.active .bnav-pip{opacity:1}
+
+/* ═══════════════════════════
+   MAIN & SECTIONS
+═══════════════════════════ */
+main{max-width:860px;margin:0 auto;padding:16px 14px}
+section{display:none}
+section.active{display:block}
+
+/* ═══════════════════════════
+   SECTION HEADER
+═══════════════════════════ */
+.sec-head{
+  display:flex;align-items:center;gap:10px;
+  margin-bottom:16px;padding-bottom:12px;
+  border-bottom:2px solid var(--ocean)
+}
+.sec-icon{
+  width:38px;height:38px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;flex-shrink:0
+}
+.sec-title{font-size:19px;font-weight:700}
+.sec-sub{font-size:12px;color:var(--muted);margin-top:2px}
+
+/* ═══════════════════════════
+   CARD
+═══════════════════════════ */
+.card{
+  background:var(--white);border-radius:var(--r);
+  border:1px solid var(--border);box-shadow:var(--shadow);
+  padding:16px;margin-bottom:14px
+}
+.card-title{font-size:15px;font-weight:700;margin-bottom:12px}
+
+/* ═══════════════════════════
+   WEATHER
+═══════════════════════════ */
+.wx-row-main{display:flex;gap:12px;align-items:flex-start}
+.wx-big-icon{font-size:58px;line-height:1;flex-shrink:0}
+.wx-temp{font-size:42px;font-weight:700;line-height:1;color:var(--text)}
+.wx-desc{font-size:16px;color:var(--muted);margin:2px 0 12px}
+.wx-pills{display:flex;flex-wrap:wrap;gap:7px}
+.wx-pill{
+  background:var(--bg);border-radius:8px;padding:6px 10px;
+  font-size:12px;display:flex;align-items:center;gap:5px
+}
+.wx-pill svg{width:14px;height:14px;color:var(--ocean);flex-shrink:0;stroke-width:2}
+.wx-pill b{font-weight:600}
+
+.alert-box{
+  display:none;background:#fff4d4;border:1px solid #e8c44a;
+  border-radius:10px;padding:10px 14px;
+  display:flex;gap:10px;align-items:flex-start;margin-bottom:14px
+}
+.alert-box svg{width:20px;height:20px;color:#b07500;flex-shrink:0;margin-top:1px;stroke-width:2}
+.alert-box p{font-size:13px;color:#7a5200}
+.alert-danger{background:#fde8e6!important;border-color:#e8a4a0!important}
+.alert-danger svg{color:#c0392b!important}
+.alert-danger p{color:#8b2020!important}
+
+/* Marine grid */
+.marine-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:4px}
+.mc{background:var(--bg);border-radius:10px;padding:11px;text-align:center}
+.mc-val{font-size:24px;font-weight:700;margin-bottom:1px;color:var(--ocean)}
+.mc-lbl{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.mc-sub{font-size:11px;color:var(--muted);margin-top:3px}
+.sea-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:5px 14px;border-radius:20px;font-size:13px;font-weight:600;
+  margin-bottom:10px
+}
+
+/* Forecast strip */
+.fc-scroll{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
+.fc-scroll::-webkit-scrollbar{display:none}
+.fc-day{flex-shrink:0;background:var(--bg);border-radius:10px;padding:10px 12px;text-align:center;min-width:72px}
+.fc-day.today{background:var(--navy);color:#fff}
+.fc-wday{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+.fc-date{font-size:10px;color:var(--muted);margin:2px 0}
+.fc-day.today .fc-date,.fc-day.today .fc-lo,.fc-day.today .fc-rain{color:rgba(255,255,255,.6)!important}
+.fc-ico{font-size:26px;margin:6px 0}
+.fc-hi{font-size:14px;font-weight:700}
+.fc-lo{font-size:11px;color:var(--muted)}
+.fc-rain{font-size:11px;color:var(--muted);margin-top:3px}
+
+/* Windy map */
+.map-card{
+  border-radius:var(--r);overflow:hidden;
+  border:1px solid var(--border);margin-bottom:14px
+}
+.map-label{
+  background:var(--navy);color:#fff;padding:8px 14px;
+  display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600
+}
+.map-label svg{width:16px;height:16px;color:var(--gold2);stroke-width:2;flex-shrink:0}
+.map-label .live-dot{
+  width:7px;height:7px;border-radius:50%;background:#2ecc71;
+  margin-left:auto;flex-shrink:0;animation:pulse 2s infinite
+}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.map-card iframe{display:block;width:100%;height:300px;border:none}
+
+/* Counter */
+.ctr-strip{
+  display:flex;background:var(--navy2);border-radius:var(--r);
+  overflow:hidden;margin-bottom:14px
+}
+.ctr-item{
+  flex:1;padding:12px 8px;text-align:center;
+  border-right:1px solid rgba(255,255,255,.08)
+}
+.ctr-item:last-child{border-right:none}
+.ctr-num{font-size:20px;font-weight:700;color:var(--gold2);font-family:monospace}
+.ctr-lbl{font-size:10px;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.05em}
+
+/* ═══════════════════════════
+   LAW SECTION
+═══════════════════════════ */
+.notice-box{
+  border-radius:10px;padding:11px 14px;margin-bottom:14px;
+  display:flex;gap:10px;align-items:flex-start;font-size:13px
+}
+.notice-box svg{width:18px;height:18px;flex-shrink:0;margin-top:1px;stroke-width:2}
+.nb-warn{background:#fff4d4;border:1px solid #e8c44a;color:#7a5200}
+.nb-warn svg{color:#b07500}
+.nb-info{background:#deeaf7;border:1px solid #b5d4f4;color:#154f96}
+.nb-info svg{color:#1557a0}
+.nb-danger{background:#fde8e6;border:1px solid #f7c1c1;color:#8b2020}
+.nb-danger svg{color:#c0392b}
+
+.law-item{
+  border:1px solid var(--border);border-radius:var(--r);
+  overflow:hidden;margin-bottom:10px;background:var(--white)
+}
+.law-hdr{
+  display:flex;align-items:center;gap:10px;
+  padding:13px 16px;cursor:pointer;user-select:none
+}
+.law-hdr:hover{background:#f4f8fc}
+.law-num{
+  width:30px;height:30px;border-radius:8px;
+  background:var(--navy);color:var(--gold2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;font-weight:700;flex-shrink:0
+}
+.law-num.cat-green{background:var(--green)}
+.law-num.cat-red{background:var(--red)}
+.law-num.cat-warn{background:var(--warn)}
+.law-title{font-size:14px;font-weight:600;flex:1;line-height:1.4}
+.law-chev{width:18px;height:18px;color:var(--muted);transition:transform .2s;flex-shrink:0;stroke-width:2}
+.law-item.open .law-chev{transform:rotate(180deg)}
+.law-body{
+  display:none;padding:0 16px 16px;
+  font-size:14px;color:var(--muted);line-height:1.8;
+  border-top:1px solid var(--border)
+}
+.law-item.open .law-body{display:block}
+.law-body ul{padding-left:18px;margin:8px 0}
+.law-body li{margin-bottom:5px;color:var(--text)}
+.law-body p{margin-bottom:8px;color:var(--text)}
+.law-body strong{color:var(--text)}
+.hl{background:#fef0d4;color:#7a4500;padding:1px 6px;border-radius:4px;font-weight:600}
+.hl-red{background:#fde8e6;color:#8b2020;padding:1px 6px;border-radius:4px;font-weight:600}
+.hl-green{background:#d8f0e6;color:#0e5c35;padding:1px 6px;border-radius:4px;font-weight:600}
+
+.law-tag{
+  display:inline-block;font-size:10px;font-weight:600;
+  padding:2px 8px;border-radius:10px;margin-left:8px;vertical-align:middle;letter-spacing:.03em
+}
+.lt-red{background:#fde8e6;color:#c0392b}
+.lt-green{background:#d8f0e6;color:#1a7a4a}
+.lt-blue{background:#deeaf7;color:#1557a0}
+
+/* ═══════════════════════════
+   EMERGENCY
+═══════════════════════════ */
+.em-note-top{
+  background:var(--red);color:#fff;border-radius:var(--r);
+  padding:12px 16px;margin-bottom:14px;font-size:14px;font-weight:600;
+  display:flex;align-items:center;gap:10px
+}
+.em-note-top svg{width:22px;height:22px;flex-shrink:0;stroke-width:2}
+
+.em-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.em-card{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:var(--r);padding:16px;text-align:center;
+  box-shadow:var(--shadow)
+}
+.em-card.sos{background:var(--red);color:#fff;border-color:#a0291e}
+.em-card.blue{border-top:3px solid var(--ocean)}
+.em-card.navy{border-top:3px solid var(--navy)}
+.em-card.green{border-top:3px solid var(--green)}
+.em-emoji{font-size:28px;margin-bottom:8px;display:block}
+.em-lbl{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:3px;font-weight:600}
+.em-card.sos .em-lbl{color:rgba(255,255,255,.7)}
+.em-name{font-size:13px;font-weight:700;margin-bottom:10px;line-height:1.3}
+.em-num{
+  display:block;background:var(--navy);color:var(--gold2);
+  font-size:18px;font-weight:700;font-family:monospace;
+  padding:9px 8px;border-radius:8px;text-decoration:none;
+  letter-spacing:.04em;transition:.15s
+}
+.em-num:hover{background:var(--navy2)}
+.em-card.sos .em-num{background:rgba(255,255,255,.2);color:#fff;font-size:24px}
+.em-hint{font-size:10px;color:var(--muted);margin-top:6px}
+.em-card.sos .em-hint{color:rgba(255,255,255,.6)}
+
+.em-section-title{
+  font-size:12px;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.06em;
+  margin:16px 0 8px;padding-left:2px
+}
+
+/* ═══════════════════════════
+   ABOUT / QR
+═══════════════════════════ */
+.qr-wrap{
+  background:var(--navy);border-radius:var(--r);
+  padding:20px;display:flex;gap:20px;
+  align-items:center;flex-wrap:wrap;margin-bottom:14px
+}
+#qr-box{background:#fff;padding:10px;border-radius:10px;flex-shrink:0}
+#qr-box img,#qr-box canvas{display:block;width:120px!important;height:120px!important}
+.qr-info{flex:1;min-width:160px}
+.qr-info h3{color:var(--gold2);font-size:16px;font-weight:700;margin-bottom:6px}
+.qr-info p{font-size:13px;color:rgba(255,255,255,.8);line-height:1.5}
+.qr-steps{margin-top:10px;display:flex;flex-direction:column;gap:6px}
+.qr-step{display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,.8)}
+.qr-num{
+  width:20px;height:20px;border-radius:50%;background:var(--gold);
+  color:var(--navy);font-size:11px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0
+}
+
+.about-grid{display:flex;flex-direction:column;gap:0}
+.about-row{
+  display:flex;gap:12px;padding:10px 0;
+  border-bottom:1px solid var(--border)
+}
+.about-row:last-child{border-bottom:none}
+.about-key{font-size:12px;font-weight:600;color:var(--muted);min-width:120px;flex-shrink:0;padding-top:1px}
+.about-val{font-size:14px;color:var(--text);line-height:1.5}
+
+/* ═══════════════════════════
+   EDIT FAB + MODAL
+═══════════════════════════ */
+#edit-fab{
+  position:fixed;bottom:calc(82px + var(--safe-bottom));right:16px;
+  width:46px;height:46px;border-radius:50%;
+  background:var(--gold);border:none;color:var(--navy);
+  font-size:20px;cursor:pointer;z-index:200;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 16px rgba(200,150,42,.4);transition:.2s
+}
+#edit-fab:hover{transform:scale(1.08)}
+
+.modal-overlay{
+  display:none;position:fixed;inset:0;
+  background:rgba(0,0,0,.5);z-index:300;
+  align-items:flex-end;justify-content:center
+}
+.modal-overlay.show{display:flex}
+.modal-box{
+  background:var(--white);border-radius:var(--r) var(--r) 0 0;
+  width:100%;max-width:600px;max-height:85vh;
+  overflow-y:auto;padding:20px
+}
+.modal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.modal-head h2{font-size:17px;font-weight:700}
+.modal-close{background:none;border:none;font-size:22px;cursor:pointer;color:var(--muted)}
+.fg{margin-bottom:13px}
+.fg label{display:block;font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:5px}
+.fg input,.fg textarea,.fg select{
+  width:100%;padding:9px 12px;border:1px solid var(--border);
+  border-radius:8px;font-size:14px;font-family:inherit;
+  color:var(--text);background:#fafbfc;outline:none
+}
+.fg input:focus,.fg textarea:focus{border-color:var(--ocean)}
+.fg textarea{height:80px;resize:vertical}
+.save-btn{
+  width:100%;padding:12px;background:var(--ocean);color:#fff;
+  border:none;border-radius:10px;font-size:15px;font-weight:600;
+  cursor:pointer;font-family:inherit;margin-top:4px
+}
+.save-btn:hover{background:var(--navy2)}
+
+/* ═══════════════════════════
+   RESPONSIVE
+═══════════════════════════ */
+@media(max-width:480px){
+  .wx-big-icon{font-size:44px}
+  .wx-temp{font-size:34px}
+  .marine-grid,.em-grid{grid-template-columns:repeat(2,1fr)}
+  .marine-grid .mc:last-child{grid-column:span 2}
+  .qr-wrap{flex-direction:column;text-align:center}
+  .hdr-title{font-size:15px}
+}
+</style>
+</head>
+<body>
+
+<div id="offline-bar">📵 Đang ngoại tuyến — Đang hiển thị dữ liệu đã lưu</div>
+
+<div id="install-bar">
+  <p>📲 Cài ứng dụng để truy cập nhanh & dùng offline không cần mạng</p>
+  <button class="install-btn-yes" id="install-btn">Cài ngay</button>
+  <button id="install-close" aria-label="Đóng">✕</button>
+</div>
+
+<header>
+  <div class="hdr">
+    <div class="hdr-left">
+      <svg class="hdr-icon" viewBox="0 0 44 44" fill="none">
+        <circle cx="22" cy="22" r="22" fill="#163364"/>
+        <path d="M8 28Q14 20 22 24Q30 28 36 20" stroke="#c8962a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M22 8L22 20M16 14L22 8L28 14" stroke="#f0c050" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="22" cy="22" r="3" fill="#f0c050"/>
+      </svg>
+      <div>
+        <div class="hdr-title">Cẩm nang số</div>
+        <div class="hdr-sub">VƯƠN KHƠI · BÁM BIỂN · LỮ ĐOÀN 189 HẢI QUÂN</div>
+      </div>
+    </div>
+    <div class="hdr-right">
+      <div class="status-dot"></div>
+      <span id="last-update"></span>
+      <button class="refresh-btn" id="refresh-btn" onclick="refreshAll()" title="Làm mới dữ liệu">⟳</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section id="hai-van" class="active">
+  <div class="sec-head">
+    <div class="sec-icon" style="background:#deeaf7">🌊</div>
+    <div>
+      <div class="sec-title">Bản tin Hải văn</div>
+      <div class="sec-sub" style="display: flex; align-items: center; gap: 8px;">
+        <span id="wx-location-sub">Biển Khánh Hòa · Đang tải dữ liệu...</span>
+        <button onclick="requestRealtimeLocation()" style="background: var(--ocean); color: white; border: none; border-radius: 4px; padding: 3px 8px; font-size: 11px; cursor: pointer; font-weight: 600; box-shadow: 0 2px 4px rgba(0,0,0,0.1);" title="Lấy vị trí hiện tại của tôi">
+          📍 Cập nhật vị trí
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="wx-alert-box" style="display:none" class="alert-box">
+    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+    <p id="wx-alert-text"></p>
+  </div>
+
+  <div class="card">
+    <div class="wx-row-main">
+      <div class="wx-big-icon" id="wx-icon">⏳</div>
+      <div style="flex:1">
+        <div class="wx-temp" id="wx-temp">--°C</div>
+        <div class="wx-desc" id="wx-desc">Đang tải dữ liệu thời tiết...</div>
+        <div class="wx-pills">
+          <div class="wx-pill">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+            Cảm giác&nbsp;<b id="wx-feels">--°C</b>
+          </div>
+          <div class="wx-pill">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+            Độ ẩm&nbsp;<b id="wx-humid">--%</b>
+          </div>
+          <div class="wx-pill">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/></svg>
+            Gió&nbsp;<b id="wx-wind">--</b>&nbsp;km/h
+          </div>
+          <div class="wx-pill">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"/></svg>
+            Hướng&nbsp;<b id="wx-dir">--</b>
+          </div>
+          <div class="wx-pill">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            Giật&nbsp;<b id="wx-gust">--</b>&nbsp;km/h
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+      <div class="card-title" style="margin:0">Điều kiện mặt biển</div>
+      <div class="sea-badge" id="sea-badge" style="background:#d8f0e6;color:#1a7a4a">🌊 Đang tải...</div>
+    </div>
+    <div class="marine-grid">
+      <div class="mc">
+        <div class="mc-val" id="wave-h">--</div>
+        <div class="mc-lbl">Sóng (m)</div>
+        <div class="mc-sub" id="wave-period">-- giây / chu kỳ</div>
+      </div>
+      <div class="mc">
+        <div class="mc-val" id="wind-wave">--</div>
+        <div class="mc-lbl">Sóng gió (m)</div>
+        <div class="mc-sub" id="swell-h">Swell: --m</div>
+      </div>
+      <div class="mc">
+        <div class="mc-val" id="wave-dir">--</div>
+        <div class="mc-lbl">Hướng sóng</div>
+        <div class="mc-sub" id="beaufort-txt">Beaufort: --</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="map-card">
+    <div class="map-label">
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
+      Bản đồ gió & sóng thực chiều (Biển Đông)
+      <div class="live-dot"></div>
+    </div>
+    <iframe id="windy-frame"
+      src="https://embed.windy.com/embed2.html?lat=12.25&lon=109.35&detailLat=12.25&detailLon=109.35&width=860&height=300&zoom=7&level=surface&overlay=wind&product=ecmwf&menu=&message=true&marker=true&calendar=now&pressure=&type=map&location=coordinates&detail=true&metricWind=km%2Fh&metricTemp=%C2%B0C"
+      allowfullscreen loading="lazy" title="Bản đồ gió sóng Biển Đông">
+    </iframe>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Dự báo 7 ngày tới</div>
+    <div class="fc-scroll" id="fc-strip">
+      <div class="fc-day"><div style="font-size:11px;color:var(--muted)">Đang tải...</div></div>
+    </div>
+  </div>
+
+  <div class="ctr-strip">
+    <div class="ctr-item"><div class="ctr-num" id="cnt-total">0</div><div class="ctr-lbl">Tổng lượt</div></div>
+    <div class="ctr-item"><div class="ctr-num" id="cnt-today">0</div><div class="ctr-lbl">Hôm nay</div></div>
+    <div class="ctr-item"><div class="ctr-num" id="cnt-week">0</div><div class="ctr-lbl">Tuần này</div></div>
+    <div class="ctr-item"><div class="ctr-num" id="cnt-month">0</div><div class="ctr-lbl">Tháng này</div></div>
+  </div>
+</section>
+
+<section id="phap-luat">
+  <div class="sec-head">
+    <div class="sec-icon" style="background:#d8f0e6">⚖️</div>
+    <div>
+      <div class="sec-title">Góc Pháp luật biển</div>
+      <div class="sec-sub">IUU · Quy định khai thác · Ranh giới biển · Mức phạt</div>
+    </div>
+  </div>
+
+  <div class="notice-box nb-danger">
+    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+    <span>Vi phạm khai thác IUU có thể bị phạt đến <strong>1 tỷ đồng</strong>, tịch thu tàu và <strong>xử lý hình sự</strong>. Hãy nắm rõ quy định trước khi ra khơi!</span>
+  </div>
+
+  <div style="font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:0 0 8px 2px">Nhóm 1 — Quy định chống khai thác IUU</div>
+
+  <div class="law-item">
+    <div class="law-hdr" onclick="tgl(this)">
+      <div class="law-num">1</div>
+      <div class="law-title">IUU là gì? Tại sao phải tuân thủ?<span class="law-tag lt-red">Bắt buộc nắm</span></div>
+      <svg class="law-chev" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+    </div>
+    <div class="law-body">
+      <p><strong>IUU</strong> là viết tắt của <em>Illegal, Unreported and Unregulated Fishing</em> – Đánh bắt cá <strong>Bất hợp pháp, Không báo cáo và Không theo quy định</strong>.</p>
+      <p><strong>Các hành vi bị coi là IUU:</strong></p>
+      <ul>
+        <li>Khai thác <strong>không có giấy phép</strong> hoặc giấy phép đã hết hạn</li>
+        <li>Khai thác trong <strong>vùng biển bị cấm</strong> hoặc xâm phạm lãnh hải nước ngoài</li>
+        <li>Không báo cáo sản lượng khai thác, báo cáo sai số liệu</li>
+        <li>Sử dụng ngư cụ bị cấm: kích điện, chất nổ, hóa chất, lưới kéo đáy sai quy định</li>
+        <li>Tắt thiết bị VMS (giám sát hành trình) khi đang khai thác</li>
+      </ul>
+      <p style="margin-top:8px"><strong>Hậu quả:</strong> Năm 2017, EU đã cảnh báo <span class="hl">thẻ vàng IUU</span> với thủy sản Việt Nam. Nếu bị rút thẻ vàng lên <span class="hl-red">thẻ đỏ</span>, toàn bộ thủy sản Việt Nam sẽ bị cấm xuất khẩu vào EU — ảnh hưởng hàng tỷ USD mỗi năm và hàng triệu lao động.</p>
+    </div>
+  </div>
+
+  <div class="law-item">
+    <div class="law-hdr" onclick="tgl(this)">
+      <div class="law-num">2</div>
+      <div class="law-title">Giấy tờ bắt buộc phải có khi ra khơi<span class="law-tag lt-red">Kiểm tra ngay</span></div>
+      <svg class="law-chev" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+    </div>
+    <div class="law-body">
+      <p>Theo <strong>Nghị định 26/2019/NĐ-CP</strong> và <strong>Luật Thủy sản 2017</strong>, tàu cá phải mang theo đầy đủ:</p>
+      <ul>
+        <li>✅ <span class="hl-green">Giấy phép khai thác thủy sản</span> — còn hiệu lực, đúng ngư trường</li>
+        <li>✅ Giấy chứng nhận <strong>đăng ký tàu cá</strong></li>
+        <li>✅ Giấy chứng nhận <strong>an toàn kỹ thuật tàu cá</strong> (còn hạn)</li>
+        <li>✅ Bằng/chứng chỉ <strong>thuyền trưởng</strong> phù hợp với cỡ tàu</li>
+        <li>✅ <span class="hl">Thiết bị VMS</span> — bắt buộc với tàu có chiều dài ≥15m, phải bật liên tục 24/7</li>
+        <li>✅ <strong>Nhật ký khai thác</strong> — ghi chép hàng ngày, nộp khi cập cảng</li>
+        <li>✅ Danh sách thuyền viên có xác nhận của địa phương</li>
+      </ul>
+      <p><span class="hl-red">Thiếu bất kỳ giấy tờ nào</span> đều có thể bị lực lượng kiểm tra xử phạt tại chỗ.</p>
+    </div>
+  </div>
+
+  <div class="law-item">
+    <div class="law-hdr" onclick="tgl(this)">
+      <div class="law-num cat-green">3</div>
+      <div class="law-title">Quy định về thiết bị giám sát hành trình VMS</div>
+      <svg class="law-chev" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+    </div>
+    <div class="law-body">
+      <p>Thiết bị <strong>VMS (Vessel Monitoring System)</strong> là hộp định vị vệ tinh gắn trên tàu, tự động gửi tín hiệu về trạm bờ mỗi giờ.</p>
+      <ul>
+        <li>Bắt buộc với tàu có chiều dài từ <span class="hl">15m trở lên</span></li>
+        <li>Phải bật <strong>liên tục 24/7</strong>, kể cả khi đang đánh bắt, di chuyển hay neo đậu</li>
+        <li>Tắt VMS quá <strong>10 phút liên tiếp</strong> bị coi là vi phạm</li>
+        <li>Nếu thiết bị hỏng: <strong>báo ngay cho cơ quan quản lý</strong> trong vòng 2 giờ và cập cảng gần nhất để sửa chữa</li>
+        <li>Không được tự ý tháo gỡ, che khuất hay can thiệp vào thiết bị VMS</li>
+      </ul>
+      <p>Kiểm ngư và Cảnh sát biển có quyền kiểm tra dữ liệu VMS bất cứ lúc nào.</p>
+    </div>
+  </div>
+
+  <div style="font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:16px 0 8px 2px">Nhóm 2 — Ranh giới biển & Vùng khai thác</div>
+
+  <div class="law-item">
+    <div class="law-hdr" onclick="tgl(this)">
+      <div class="law-num cat-warn">4</div>
+      <div class="law-title">Ranh giới các vùng biển Việt Nam<span class="law-tag lt-blue">Theo UNCLOS</span></div>
+      <svg class="law-chev" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+    </div>
+    <div class="law-body">
+      <p>Theo <strong>UNCLOS 1982</strong> và <strong>Luật Biển Việt Nam 2012</strong>, biển Việt Nam được phân chia thành các vùng:</p>
+      <ul>
+        <li><strong>Nội thủy:</strong> Vùng nước phía trong đường cơ sở — <span class="hl-green">chủ quyền tuyệt đối</span></li>
+        <li><strong>Lãnh hải:</strong> 0–12 hải lý tính từ đường cơ sở — chủ quyền đầy đủ của Việt Nam</li>
+        <li><strong>Vùng tiếp giáp:</strong> 12–24 hải lý — kiểm soát thuế quan, hải quan, an ninh</li>
+        <li><strong>Vùng đặc quyền kinh tế (EEZ):</strong> 0–200 hải lý — quyền khai thác tài nguyên của Việt Nam</li>
+        <li><strong>Thềm lục địa:</strong> Đến 350 hải lý — quyền khai thác tài nguyên đáy biển</li>
+      </ul>
+      <p><span class="hl-red">⚠️ Tuyệt đối không xâm phạm lãnh hải nước khác!</span> Nếu bị bắt ở vùng biển nước ngoài, tàu và ngư dân sẽ bị xử lý theo pháp luật của nước đó, thường bị giam giữ nhiều tháng và phạt rất nặng.</p>
+    </div>
+  </div>
+
+  <div class="law-item">
+    <div class="law-hdr" onclick="tgl(this)">
+      <div class="law-num cat-warn">5</div>
+      <div class="law-title">Vùng biển được phép khai thác và vùng cấm</div>
+      <svg class="law-chev" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+    </div>
+    <div class="law-body">
+      <p><strong>Phân loại tàu và vùng khai thác:</strong></p>
+      <ul>
+        <li><strong>Tàu nhỏ (chiều dài &lt;12m):</strong> Chỉ được khai thác trong vùng <span class="hl">ven bờ</span> (0–6 hải lý)</li>
+        <li><strong>Tàu vừa (12–15m):</strong> Được khai thác vùng <span class="hl">lộng</span> (6–24 hải lý)</li>
+        <li><strong>Tàu lớn (≥15m):</strong> Được khai thác vùng <span class="hl-green">khơi</span> (ngoài 24 hải lý)</li>
+      </ul>
+      <p><strong>Các khu vực cấm khai thác:</strong></p>
+      <ul>
+        <li>Khu vực bảo tồn biển (vịnh Nha Trang, Hòn Mun...)</li>
+        <li>Khu vực neo đậu, luồng hàng hải</li>
+        <li>Mùa vụ sinh sản của các loài thủy sản (theo thông báo hàng năm)</li>
+        <li>Vùng biển tiếp giáp đảo có quân đội đóng giữ</li>
+      </ul>
+    </div>
+  </div>
+
+  <div style="font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:16px 0 8px 2px">Nhóm 3 — Mức phạt vi phạm</div>
+
+  <div class="law-item">
+    <div class="law-hdr" onclick="tgl(this)">
+      <div class="law-num cat-red">6</div>
+      <div class="law-title">Mức phạt hành chính vi phạm khai thác<span class="law-tag lt-red">Phạt nặng</span></div>
+      <svg class="law-chev" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+    </div>
+    <div class="law-body">
+      <p>Theo <strong>Nghị định 42/2019/NĐ-CP</strong> và <strong>Nghị định 38/2024/NĐ-CP</strong>:</p>
+      <ul>
+        <li>Khai thác không có giấy phép: <span class="hl-red">phạt 50–70 triệu đồng</span></li>
+        <li>Khai thác vượt hạn ngạch: <span class="hl-red">phạt 30–50 triệu đồng</span></li>
+        <li>Xâm phạm vùng biển nước ngoài: <span class="hl-red">phạt 700tr–1 tỷ + tịch thu tàu</span></li>
+        <li>Không lắp VMS (tàu ≥15m): <span class="hl">phạt 10–20 triệu đồng</span></li>
+        <li>Tắt VMS trái phép: <span class="hl-red">phạt 20–30 triệu đồng</span></li>
+        <li>Không ghi nhật ký khai thác: <span class="hl">phạt 5–10 triệu đồng</span></li>
+        <li>Không nộp nhật ký khi cập cảng: <span class="hl">phạt 5–10 triệu đồng</span></li>
+        <li>Sử dụng ngư cụ cấm (kích điện, chất nổ): <span class="hl-red">phạt 50–100 triệu + truy cứu hình sự</span></li>
+        <li>Không có bằng thuyền trưởng phù hợp: <span class="hl">phạt 10–15 triệu đồng</span></li>
+      </ul>
+      <p><strong>Hình thức phạt bổ sung:</strong> Tước giấy phép khai thác 1–12 tháng; tịch thu ngư cụ và sản phẩm khai thác trái phép; buộc thả thủy sản còn sống trở lại môi trường.</p>
+    </div>
+  </div>
+
+  <div class="law-item">
+    <div class="law-hdr" onclick="tgl(this)">
+      <div class="law-num cat-red">7</div>
+      <div class="law-title">Trách nhiệm hình sự khi vi phạm nghiêm trọng</div>
+      <svg class="law-chev" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+    </div>
+    <div class="law-body">
+      <p>Theo <strong>Điều 242, Bộ luật Hình sự 2015 (sửa đổi 2017)</strong>:</p>
+      <ul>
+        <li>Hủy hoại nguồn lợi thủy sản có thể bị phạt <span class="hl-red">tù 6 tháng đến 3 năm</span></li>
+        <li>Sử dụng chất nổ, hóa chất hủy hoại môi trường: <span class="hl-red">tù 2–7 năm</span></li>
+        <li>Vi phạm có tổ chức hoặc gây hậu quả đặc biệt nghiêm trọng: <span class="hl-red">tù 5–10 năm</span></li>
+      </ul>
+      <p>Ngoài ra, chủ tàu có thể bị: <strong>cấm đảm nhiệm chức vụ</strong> liên quan đến thủy sản từ 1–5 năm; <strong>phạt tiền</strong> từ 50–500 triệu đồng tùy mức độ vi phạm.</p>
+    </div>
+  </div>
+
+  <div style="font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:16px 0 8px 2px">Nhóm 4 — Thiết bị an toàn & Bảo hiểm</div>
+
+  <div class="law-item">
+    <div class="law-hdr" onclick="tgl(this)">
+      <div class="law-num cat-green">8</div>
+      <div class="law-title">Thiết bị an toàn bắt buộc trên tàu<span class="law-tag lt-green">An toàn tính mạng</span></div>
+      <svg class="law-chev" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+    </div>
+    <div class="law-body">
+      <p>Theo <strong>Thông tư 23/2018/TT-BGTVT</strong>, tàu cá phải trang bị:</p>
+      <ul>
+        <li>✅ <span class="hl-green">Áo phao</span> — đủ số lượng cho toàn bộ thuyền viên, còn phao nổi tốt</li>
+        <li>✅ <span class="hl-green">Phao cứu sinh</span> — tối thiểu 1 chiếc/tàu, có đèn nhấp nháy ban đêm</li>
+        <li>✅ <strong>Dây cứu sinh</strong> — dài tối thiểu 30m, gắn cố định trên tàu</li>
+        <li>✅ <strong>Bình chữa cháy</strong> — còn hạn sử dụng, đặt ở vị trí dễ lấy</li>
+        <li>✅ <span class="hl">Tủ thuốc y tế</span> — theo danh mục Bộ Y tế quy định</li>
+        <li>✅ <span class="hl-green">Radio VHF</span> — kênh 16 (cấp cứu quốc tế) phải bật 24/7 khi hành trình</li>
+        <li>✅ <strong>Pháo sáng tín hiệu</strong> — tối thiểu 4 pháo, còn hạn</li>
+        <li>✅ <strong>La bàn và hải đồ</strong> — phù hợp vùng hoạt động</li>
+        <li>✅ <strong>Đèn hành trình</strong> — hoạt động tốt, đúng tiêu chuẩn COLREG</li>
+      </ul>
+      <p>Kiểm tra toàn bộ thiết bị <strong>trước mỗi chuyến ra khơi</strong>. Thiết bị hư hỏng phải thay thế ngay, không ra khơi khi chưa đủ thiết bị an toàn.</p>
+    </div>
+  </div>
+
+  <div class="law-item">
+    <div class="law-hdr" onclick="tgl(this)">
+      <div class="law-num cat-green">9</div>
+      <div class="law-title">Bảo hiểm thuyền viên và tàu cá</div>
+      <svg class="law-chev" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+    </div>
+    <div class="law-body">
+      <p>Theo <strong>Nghị định 67/2014/NĐ-CP</strong> và <strong>Thông tư 116/2014/TT-BTC</strong>:</p>
+      <ul>
+        <li><strong>Bảo hiểm thân tàu:</strong> Bắt buộc với tàu có công suất từ <span class="hl">90CV trở lên</span> đánh bắt xa bờ</li>
+        <li><strong>Bảo hiểm tai nạn thuyền viên:</strong> Tối thiểu <span class="hl-green">60 triệu đồng/người</span> (bảo hiểm chết, thương tật do tai nạn)</li>
+        <li>Hỗ trợ phí bảo hiểm: Nhà nước hỗ trợ 70–100% phí bảo hiểm cho tàu đánh bắt xa bờ theo Nghị định 67</li>
+        <li>Hỗ trợ ngư dân bị thiệt hại do thiên tai: Tiền hỗ trợ theo quy định của tỉnh/thành phố</li>
+      </ul>
+      <p>Liên hệ <strong>Chi cục Thủy sản Khánh Hòa</strong> hoặc <strong>Hội Nghề cá</strong> để được hướng dẫn thủ tục tham gia bảo hiểm.</p>
+    </div>
+  </div>
+
+  <div class="law-item">
+    <div class="law-hdr" onclick="tgl(this)">
+      <div class="law-num">10</div>
+      <div class="law-title">Cảng cá, neo đậu và quy trình cập bờ</div>
+      <svg class="law-chev" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+    </div>
+    <div class="law-body">
+      <p><strong>Khi cập cảng, thuyền trưởng phải:</strong></p>
+      <ul>
+        <li>Thông báo cho Ban Quản lý Cảng cá trước khi cập bờ ít nhất <strong>1 giờ</strong></li>
+        <li><strong>Nộp nhật ký khai thác</strong> cho cán bộ cảng cá trong vòng 24 giờ sau khi cập cảng</li>
+        <li>Xuất trình đầy đủ giấy tờ tàu và giấy phép khai thác khi được yêu cầu</li>
+        <li>Khai báo thông tin hàng hóa thủy sản khai thác (loại, số lượng, ngư trường)</li>
+        <li>Thủy sản phải <strong>có nguồn gốc rõ ràng</strong> mới được lưu thông, chế biến, xuất khẩu</li>
+      </ul>
+      <p><strong>Cảng cá trên địa bàn Khánh Hòa:</strong> Cảng cá Hòn Rớ (Nha Trang), Cảng cá Đá Bạc (Cam Ranh), Cảng cá Vạn Giã (Vạn Ninh), Cảng cá Đầm Môn.</p>
+    </div>
+  </div>
+</section>
+
+<section id="khan-cap">
+  <div class="sec-head">
+    <div class="sec-icon" style="background:#fde8e6">🚨</div>
+    <div>
+      <div class="sec-title">Liên hệ khẩn cấp</div>
+      <div class="sec-sub">Nhấn vào số để gọi ngay · Hoạt động 24/7</div>
+    </div>
+  </div>
+
+  <div class="em-note-top">
+    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+    Trong tình huống nguy hiểm: gọi ngay <strong>Kênh VHF 16</strong> hoặc <strong>1800 599 914</strong>. Đây là kênh cứu nạn quốc tế, miễn phí 24/7.
+  </div>
+
+  <div class="em-section-title">🆘 Tìm kiếm cứu nạn biển</div>
+  <div class="em-grid">
+    <div class="em-card sos">
+      <span class="em-emoji">🆘</span>
+      <div class="em-lbl">Cấp cứu biển quốc tế</div>
+      <div class="em-name">Radio VHF – Kênh 16</div>
+      <a class="em-num" href="tel:0">Kênh 16</a>
+      <div class="em-hint">Bật 24/7 · Miễn phí · Toàn cầu</div>
+    </div>
+    <div class="em-card blue">
+      <span class="em-emoji">⚓</span>
+      <div class="em-lbl">Trung tâm MRCC Quốc gia</div>
+      <div class="em-name">Tìm kiếm & Cứu nạn Hàng hải</div>
+      <a class="em-num" href="tel:18005999914">1800 599 914</a>
+      <div class="em-hint">Miễn phí · 24/7</div>
+    </div>
+    <div class="em-card blue">
+      <span class="em-emoji">🚢</span>
+      <div class="em-lbl">Cảnh sát biển Việt Nam</div>
+      <div class="em-name">Vùng Cảnh sát biển 3</div>
+      <a class="em-num" href="tel:191">191</a>
+      <div class="em-hint">Miễn phí · 24/7</div>
+    </div>
+    <div class="em-card blue">
+      <span class="em-emoji">🏥</span>
+      <div class="em-lbl">Cấp cứu y tế</div>
+      <div class="em-name">Cấp cứu khi cập bờ</div>
+      <a class="em-num" href="tel:115">115</a>
+      <div class="em-hint">Miễn phí · 24/7</div>
+    </div>
+  </div>
+
+  <div class="em-section-title">🌊 Kiểm ngư & Biên phòng Khánh Hòa</div>
+  <div class="em-grid">
+    <div class="em-card navy">
+      <span class="em-emoji">🐟</span>
+      <div class="em-lbl">Chi cục Kiểm ngư</div>
+      <div class="em-name">Khánh Hòa</div>
+      <a class="em-num" href="tel:02583822789">(0258) 3822 789</a>
+      <div class="em-hint">Giờ hành chính</div>
+    </div>
+    <div class="em-card navy">
+      <span class="em-emoji">🛡️</span>
+      <div class="em-lbl">Bộ đội Biên phòng</div>
+      <div class="em-name">Tỉnh Khánh Hòa</div>
+      <a class="em-num" href="tel:02583831413">(0258) 3831 413</a>
+      <div class="em-hint">Trực chiến 24/7</div>
+    </div>
+    <div class="em-card navy">
+      <span class="em-emoji">🚔</span>
+      <div class="em-lbl">Đồn BP Vĩnh Trường</div>
+      <div class="em-name">Nha Trang</div>
+      <a class="em-num" href="tel:02583810159">(0258) 3810 159</a>
+      <div class="em-hint">Trực chiến 24/7</div>
+    </div>
+    <div class="em-card navy">
+      <span class="em-emoji">⛵</span>
+      <div class="em-lbl">Đồn BP Hòn Rớ</div>
+      <div class="em-name">Nha Trang</div>
+      <a class="em-num" href="tel:02583883456">(0258) 3883 456</a>
+      <div class="em-hint">Trực chiến 24/7</div>
+    </div>
+  </div>
+
+  <div class="em-section-title">🏪 Cảng cá & Hỗ trợ ngư dân</div>
+  <div class="em-grid">
+    <div class="em-card green">
+      <span class="em-emoji">🦀</span>
+      <div class="em-lbl">Cảng cá Hòn Rớ</div>
+      <div class="em-name">Nha Trang</div>
+      <a class="em-num" href="tel:02583831568">(0258) 3831 568</a>
+      <div class="em-hint">Cảng cá lớn nhất KH</div>
+    </div>
+    <div class="em-card green">
+      <span class="em-emoji">🚢</span>
+      <div class="em-lbl">Cảng cá Đá Bạc</div>
+      <div class="em-name">Cam Ranh</div>
+      <a class="em-num" href="tel:02583985214">(0258) 3985 214</a>
+      <div class="em-hint">Phía Nam tỉnh</div>
+    </div>
+    <div class="em-card green">
+      <span class="em-emoji">📋</span>
+      <div class="em-lbl">Chi cục Thủy sản</div>
+      <div class="em-name">Khánh Hòa</div>
+      <a class="em-num" href="tel:02583822560">(0258) 3822 560</a>
+      <div class="em-hint">Giờ hành chính</div>
+    </div>
+    <div class="em-card green">
+      <span class="em-emoji">🤝</span>
+      <div class="em-lbl">Hội Nghề cá</div>
+      <div class="em-name">Khánh Hòa</div>
+      <a class="em-num" href="tel:02583826512">(0258) 3826 512</a>
+      <div class="em-hint">Hỗ trợ ngư dân</div>
+    </div>
+  </div>
+
+  <div class="em-section-title">🌦️ Thời tiết & Thông báo hàng hải</div>
+  <div class="em-grid">
+    <div class="em-card navy">
+      <span class="em-emoji">📻</span>
+      <div class="em-lbl">Đài Khí tượng Nha Trang</div>
+      <div class="em-name">Dự báo thời tiết biển</div>
+      <a class="em-num" href="tel:02583822058">(0258) 3822 058</a>
+      <div class="em-hint">Bản tin 6h & 18h hàng ngày</div>
+    </div>
+    <div class="em-card navy">
+      <span class="em-emoji">🌊</span>
+      <div class="em-lbl">Cứu nạn Hàng hải VN</div>
+      <div class="em-name">VINASAR – Miền Trung</div>
+      <a class="em-num" href="tel:0258382990">(0258) 382 990</a>
+      <div class="em-hint">Cứu hộ tàu thuyền</div>
+    </div>
+  </div>
+
+  <div class="notice-box nb-info" style="margin-top:14px">
+    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+    <span><strong>Khi gọi cứu nạn:</strong> Thông báo rõ <strong>tên tàu + số hiệu, vị trí (tọa độ GPS nếu có), số người trên tàu, tình trạng sự cố</strong> và giữ máy để hướng dẫn thêm.</span>
+  </div>
+</section>
+
+<section id="gioi-thieu">
+  <div class="sec-head">
+    <div class="sec-icon" style="background:#fdf0d8">ℹ️</div>
+    <div>
+      <div class="sec-title">Giới thiệu</div>
+      <div class="sec-sub">Về mô hình Cẩm nang số · Chia sẻ QR</div>
+    </div>
+  </div>
+
+  <div class="qr-wrap">
+    <div id="qr-box"></div>
+    <div class="qr-info">
+      <h3>Chia sẻ Cẩm nang số</h3>
+      <p>Quét mã QR để mở trang này trên điện thoại — không cần gõ địa chỉ.</p>
+      <div class="qr-steps">
+        <div class="qr-step"><div class="qr-num">1</div><span>Mở Camera điện thoại</span></div>
+        <div class="qr-step"><div class="qr-num">2</div><span>Hướng vào mã QR bên trái</span></div>
+        <div class="qr-step"><div class="qr-num">3</div><span>Nhấn thông báo để mở</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Thông tin mô hình</div>
+    <div class="about-grid">
+      <div class="about-row"><div class="about-key">Tên mô hình</div><div class="about-val">Cẩm nang số vươn khơi, bám biển</div></div>
+      <div class="about-row"><div class="about-key">Đơn vị</div><div class="about-val">Kíp 7 và Hội Phụ nữ Lữ đoàn 189 Hải quân</div></div>
+      <div class="about-row"><div class="about-key">Phê duyệt</div><div class="about-val">Kế hoạch 622/KH-CT ngày 16/3/2026 — Phòng Chính trị</div></div>
+      <div class="about-row"><div class="about-key">Đối tượng</div><div class="about-val">Ngư dân phường Hiệp Hòa và phường Tuy Hòa</div></div>
+      <div class="about-row"><div class="about-key">Triển khai</div><div class="about-val">Tháng 9/2026</div></div>
+      <div class="about-row"><div class="about-key">Cơ sở pháp lý</div><div class="about-val">Hướng dẫn 4160/HD-CT ngày 25/02/2026 của Cục Chính trị Hải quân</div></div>
+      <div class="about-row"><div class="about-key">Phiên bản</div><div class="about-val">PWA v1.1 · Hoạt động offline · 1-File Deploy</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Công nghệ sử dụng</div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px">
+      <span style="background:#deeaf7;color:#1557a0;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:600">PWA + Service Worker</span>
+      <span style="background:#deeaf7;color:#1557a0;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:600">Open-Meteo API (miễn phí)</span>
+      <span style="background:#deeaf7;color:#1557a0;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:600">Windy.com Embed</span>
+      <span style="background:#d8f0e6;color:#1a7a4a;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:600">Offline Cache</span>
+      <span style="background:#d8f0e6;color:#1a7a4a;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:600">Dynamic QR Code</span>
+      <span style="background:#fdf0d4;color:#b07500;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:600">GitHub Pages</span>
+      <span style="background:#fdf0d4;color:#b07500;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:600">Real-time GPS</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<button id="edit-fab" onclick="openEdit()" title="Chỉnh sửa nội dung">✎</button>
+
+<div class="modal-overlay" id="edit-modal">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h2>✎ Chỉnh sửa nhanh</h2>
+      <button class="modal-close" onclick="closeEdit()">✕</button>
+    </div>
+    <div class="fg">
+      <label>Vĩ độ vị trí theo dõi thời tiết</label>
+      <input type="number" id="cfg-lat" step="0.01" value="12.25"/>
+    </div>
+    <div class="fg">
+      <label>Kinh độ vị trí theo dõi thời tiết</label>
+      <input type="number" id="cfg-lon" step="0.01" value="109.35"/>
+    </div>
+    <div class="fg">
+      <label>Tên vị trí hiển thị</label>
+      <input type="text" id="cfg-locname" value="Biển Khánh Hòa"/>
+    </div>
+    <div class="fg">
+      <label>Thêm điều khoản pháp luật mới — Tiêu đề</label>
+      <input type="text" id="cfg-law-title" placeholder="Ví dụ: Quy định mùa cấm khai thác 2026"/>
+    </div>
+    <div class="fg">
+      <label>Nội dung điều khoản</label>
+      <textarea id="cfg-law-body" placeholder="Nhập nội dung chi tiết..."></textarea>
+    </div>
+    <div class="fg">
+      <label>Thêm số điện thoại khẩn cấp — Tên cơ quan</label>
+      <input type="text" id="cfg-em-name" placeholder="Ví dụ: Đồn BP Vạn Ninh"/>
+    </div>
+    <div class="fg">
+      <label>Số điện thoại</label>
+      <input type="text" id="cfg-em-num" placeholder="Ví dụ: 02583861234"/>
+    </div>
+    <div class="fg">
+      <label>Ghi chú thêm</label>
+      <input type="text" id="cfg-em-hint" placeholder="Ví dụ: Trực chiến 24/7"/>
+    </div>
+    <button class="save-btn" onclick="saveConfig()">💾 Lưu thay đổi</button>
+  </div>
+</div>
+
+<nav class="bnav">
+  <button class="bnav-item active" onclick="switchTab('hai-van',this)">
+    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+    Hải văn
+    <div class="bnav-pip"></div>
+  </button>
+  <button class="bnav-item" onclick="switchTab('phap-luat',this)">
+    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+    Pháp luật
+    <div class="bnav-pip"></div>
+  </button>
+  <button class="bnav-item" onclick="switchTab('khan-cap',this)">
+    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+    Khẩn cấp
+    <div class="bnav-pip"></div>
+  </button>
+  <button class="bnav-item" onclick="switchTab('gioi-thieu',this)">
+    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+    Giới thiệu
+    <div class="bnav-pip"></div>
+  </button>
+</nav>
+
+<script>
+/* ── CONSTANTS ── */
+var STATS_KEY = 'camnangso_stats';
+var CFG_KEY   = 'camnangso_cfg';
+var WX_CACHE  = 'camnangso_wx';
+
+/* ── NAV ── */
+function switchTab(id, btn) {
+  document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.bnav-item').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  if(btn) btn.classList.add('active');
+  if(id === 'gioi-thieu') initQR();
+  window.scrollTo(0,0);
+}
+
+/* ── REAL-TIME LOCATION (GPS) ── */
+function requestRealtimeLocation() {
+  if (!navigator.geolocation) {
+    alert("Trình duyệt hoặc thiết bị của bạn không hỗ trợ định vị GPS.");
+    return;
+  }
+
+  var locText = document.getElementById('wx-location-sub');
+  var originalText = locText.textContent;
+  locText.textContent = "Đang tìm tín hiệu GPS...";
+
+  navigator.geolocation.getCurrentPosition(
+    function(position) {
+      var lat = position.coords.latitude;
+      var lon = position.coords.longitude;
+      
+      var cfg = getCfg();
+      cfg.lat = lat;
+      cfg.lon = lon;
+      cfg.locName = "Vị trí hiện tại (GPS)";
+      localStorage.setItem(CFG_KEY, JSON.stringify(cfg));
+
+      document.getElementById('windy-frame').src =
+        'https://embed.windy.com/embed2.html?lat=' + lat + '&lon=' + lon
+        + '&detailLat=' + lat + '&detailLon=' + lon
+        + '&width=860&height=300&zoom=8&level=surface&overlay=wind&product=ecmwf'
+        + '&menu=&message=true&marker=true&calendar=now&type=map&location=coordinates'
+        + '&detail=true&metricWind=km%2Fh&metricTemp=%C2%B0C';
+
+      fetchWeather();
+    },
+    function(error) {
+      alert("Không thể lấy vị trí. Vui lòng bật định vị GPS trên thiết bị và cấp quyền cho trình duyệt.\nLỗi: " + error.message);
+      locText.textContent = originalText;
+    },
+    { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+  );
+}
+
+/* ── WEATHER DATA ── */
+var WMO = {
+  0:{vi:'Trời quang',ico:'☀️',safe:true},
+  1:{vi:'Ít mây',ico:'🌤️',safe:true},
+  2:{vi:'Có mây',ico:'⛅',safe:true},
+  3:{vi:'Nhiều mây',ico:'🌥️',safe:true},
+  45:{vi:'Sương mù',ico:'🌫️',safe:true},
+  48:{vi:'Sương đọng',ico:'🌫️',safe:true},
+  51:{vi:'Mưa phùn nhẹ',ico:'🌦️',safe:true},
+  53:{vi:'Mưa phùn',ico:'🌦️',safe:true},
+  55:{vi:'Mưa phùn nặng',ico:'🌧️',safe:false},
+  61:{vi:'Mưa nhẹ',ico:'🌧️',safe:true},
+  63:{vi:'Mưa vừa',ico:'🌧️',safe:true},
+  65:{vi:'Mưa to',ico:'🌧️',safe:false},
+  80:{vi:'Mưa rào nhẹ',ico:'🌦️',safe:true},
+  81:{vi:'Mưa rào',ico:'🌧️',safe:true},
+  82:{vi:'Mưa rào nặng',ico:'⛈️',safe:false},
+  95:{vi:'Dông',ico:'⛈️',safe:false},
+  96:{vi:'Dông mưa đá',ico:'⛈️',safe:false},
+  99:{vi:'Dông mưa đá lớn',ico:'⛈️',safe:false}
+};
+var DAYS = ['CN','T2','T3','T4','T5','T6','T7'];
+
+function getWMO(c){ return WMO[c] || {vi:'Không xác định',ico:'🌐',safe:true}; }
+
+function windDir(deg){
+  var d=['Bắc','Đông Bắc','Đông','Đông Nam','Nam','Tây Nam','Tây','Tây Bắc'];
+  return d[Math.round(deg/45)%8];
+}
+
+function beaufort(kmh){
+  if(kmh<1) return {l:0,vi:'Gió lặng'};
+  if(kmh<6) return {l:1,vi:'Gió rất nhẹ'};
+  if(kmh<12) return {l:2,vi:'Gió nhẹ'};
+  if(kmh<20) return {l:3,vi:'Gió nhẹ vừa'};
+  if(kmh<29) return {l:4,vi:'Gió vừa'};
+  if(kmh<39) return {l:5,vi:'Gió vừa mạnh'};
+  if(kmh<50) return {l:6,vi:'Gió mạnh'};
+  if(kmh<62) return {l:7,vi:'Gió khá mạnh'};
+  if(kmh<75) return {l:8,vi:'Gió rất mạnh'};
+  if(kmh<89) return {l:9,vi:'Bão nhỏ'};
+  if(kmh<103) return {l:10,vi:'Bão'};
+  if(kmh<118) return {l:11,vi:'Bão dữ'};
+  return {l:12,vi:'Siêu bão'};
+}
+
+function seaState(h){
+  if(h<0.1) return {vi:'Biển lặng',color:'#1a7a4a',bg:'#d8f0e6',safe:true};
+  if(h<0.5) return {vi:'Biển lăn tăn',color:'#1a7a4a',bg:'#d8f0e6',safe:true};
+  if(h<1.25) return {vi:'Biển nhẹ',color:'#3a8a2a',bg:'#d8f0e6',safe:true};
+  if(h<2.5) return {vi:'Biển trung bình',color:'#c8962a',bg:'#fef0d4',safe:true};
+  if(h<4) return {vi:'Biển động',color:'#c07820',bg:'#fde8d0',safe:false};
+  if(h<6) return {vi:'Biển động mạnh',color:'#c0392b',bg:'#fde8e6',safe:false};
+  return {vi:'Biển cực kỳ động',color:'#8b0000',bg:'#fde8e6',safe:false};
+}
+
+function getCfg(){
+  try{ var s=localStorage.getItem(CFG_KEY); return s?JSON.parse(s):{lat:12.25,lon:109.35,locName:'Biển Khánh Hòa'}; }
+  catch(e){ return {lat:12.25,lon:109.35,locName:'Biển Khánh Hòa'}; }
+}
+
+async function fetchWeather(){
+  var cfg = getCfg();
+  var WX = 'https://api.open-meteo.com/v1/forecast'
+    +'?latitude='+cfg.lat+'&longitude='+cfg.lon
+    +'&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m,wind_direction_10m,wind_gusts_10m'
+    +'&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,wind_speed_10m_max'
+    +'&timezone=Asia%2FBangkok&forecast_days=7&wind_speed_unit=kmh';
+  var MAR = 'https://marine-api.open-meteo.com/v1/marine'
+    +'?latitude='+cfg.lat+'&longitude='+cfg.lon
+    +'&current=wave_height,wave_direction,wave_period,wind_wave_height,swell_wave_height'
+    +'&timezone=Asia%2FBangkok&forecast_days=1';
+  try{
+    var [wx, mar] = await Promise.all([fetch(WX).then(r=>r.json()), fetch(MAR).then(r=>r.json())]);
+    localStorage.setItem(WX_CACHE, JSON.stringify({ts:Date.now(),wx,mar}));
+    renderWX(wx, mar);
+    updateTime();
+  } catch(e){
+    var c = localStorage.getItem(WX_CACHE);
+    if(c){ var d=JSON.parse(c); renderWX(d.wx,d.mar); var ago=Math.round((Date.now()-d.ts)/60000); document.getElementById('last-update').textContent='Cache '+ago+'ph'; }
+    else { document.getElementById('wx-desc').textContent='Không có kết nối mạng.'; }
+  }
+}
+
+function renderWX(wx, mar){
+  var c = wx.current;
+  var wmo = getWMO(c.weather_code);
+  var cfg = getCfg();
+  var bf = beaufort(c.wind_speed_10m);
+
+  document.getElementById('wx-icon').textContent = wmo.ico;
+  document.getElementById('wx-temp').textContent = Math.round(c.temperature_2m)+'°C';
+  document.getElementById('wx-desc').textContent = wmo.vi;
+  document.getElementById('wx-feels').textContent = Math.round(c.apparent_temperature)+'°C';
+  document.getElementById('wx-humid').textContent = c.relative_humidity_2m+'%';
+  document.getElementById('wx-wind').textContent = Math.round(c.wind_speed_10m);
+  document.getElementById('wx-dir').textContent = windDir(c.wind_direction_10m);
+  document.getElementById('wx-gust').textContent = Math.round(c.wind_gusts_10m);
+  document.getElementById('wx-location-sub').textContent = cfg.locName+' · '+new Date().toLocaleTimeString('vi-VN',{hour:'2-digit',minute:'2-digit'});
+
+  // Alert
+  var alerts=[];
+  if(!wmo.safe) alerts.push('⛈️ '+wmo.vi+' — cẩn thận khi ra khơi!');
+  if(bf.l>=6) alerts.push('💨 '+bf.vi+' (cấp '+bf.l+') — gió mạnh nguy hiểm!');
+  var ab = document.getElementById('wx-alert-box');
+  if(alerts.length){
+    document.getElementById('wx-alert-text').innerHTML = alerts.join(' &nbsp;·&nbsp; ');
+    ab.style.display='flex';
+    if(bf.l>=8||!wmo.safe) ab.className='alert-box alert-danger';
+    else ab.className='alert-box';
+  } else { ab.style.display='none'; }
+
+  // Marine
+  if(mar && mar.current){
+    var mc=mar.current;
+    var wh=mc.wave_height||0;
+    var ss=seaState(wh);
+    document.getElementById('wave-h').textContent=wh.toFixed(1);
+    document.getElementById('wave-h').style.color=ss.color;
+    document.getElementById('wave-period').textContent=(mc.wave_period||0).toFixed(1)+' giây / chu kỳ';
+    document.getElementById('wind-wave').textContent=(mc.wind_wave_height||0).toFixed(1);
+    document.getElementById('wind-wave').style.color=ss.color;
+    document.getElementById('swell-h').textContent='Swell: '+(mc.swell_wave_height||0).toFixed(1)+'m';
+    document.getElementById('wave-dir').textContent=windDir(mc.wave_direction||0);
+    document.getElementById('wave-dir').style.color=ss.color;
+    document.getElementById('beaufort-txt').textContent='Beaufort: '+bf.l+' — '+bf.vi;
+    var badge=document.getElementById('sea-badge');
+    badge.textContent='🌊 '+ss.vi;
+    badge.style.background=ss.bg;
+    badge.style.color=ss.color;
+  }
+
+  renderForecast(wx.daily);
+}
+
+function renderForecast(daily){
+  var html='';
+  for(var i=0;i<7;i++){
+    var d=new Date(daily.time[i]);
+    var wmo=getWMO(daily.weather_code[i]);
+    var td=i===0;
+    var rain=Math.round(daily.precipitation_probability_max[i]||0);
+    var rainColor=rain>60?'#c0392b':rain>30?'#c8962a':'var(--muted)';
+    html+='<div class="fc-day'+(td?' today':'')+'">'+
+      '<div class="fc-wday">'+DAYS[d.getDay()]+'</div>'+
+      '<div class="fc-date">'+(d.getMonth()+1)+'/'+(d.getDate())+'</div>'+
+      '<div class="fc-ico">'+wmo.ico+'</div>'+
+      '<div class="fc-hi">'+Math.round(daily.temperature_2m_max[i])+'°</div>'+
+      '<div class="fc-lo">'+Math.round(daily.temperature_2m_min[i])+'°</div>'+
+      '<div class="fc-rain" style="color:'+rainColor+'">💧'+rain+'%</div>'+
+      '</div>';
+  }
+  document.getElementById('fc-strip').innerHTML=html;
+}
+
+/* ── ACCORDION ── */
+function tgl(hdr){
+  hdr.parentElement.classList.toggle('open');
+}
+
+/* ── COUNTER ── */
+function initCounter(){
+  var today=new Date().toISOString().slice(0,10);
+  var ws=(function(){var d=new Date();d.setDate(d.getDate()-d.getDay());return d.toISOString().slice(0,10);})();
+  var mk=today.slice(0,7);
+  var raw=localStorage.getItem(STATS_KEY);
+  var data=raw?JSON.parse(raw):{total:0,days:{}};
+  data.total=(data.total||0)+1;
+  data.days[today]=(data.days[today]||0)+1;
+  localStorage.setItem(STATS_KEY,JSON.stringify(data));
+  var tc=data.days[today]||0;
+  var wc=Object.keys(data.days).filter(d=>d>=ws).reduce((s,d)=>s+data.days[d],0);
+  var mc=Object.keys(data.days).filter(d=>d.startsWith(mk)).reduce((s,d)=>s+data.days[d],0);
+  function anim(id,n){var cur=0,step=Math.max(1,Math.ceil(n/20)),iv=setInterval(function(){cur=Math.min(cur+step,n);document.getElementById(id).textContent=cur.toLocaleString('vi-VN');if(cur>=n)clearInterval(iv);},40);}
+  anim('cnt-total',data.total);anim('cnt-today',tc);anim('cnt-week',wc);anim('cnt-month',mc);
+}
+
+/* ── QR CODE ── */
+var qrDone=false;
+function initQR(){
+  if(qrDone) return;
+  var box=document.getElementById('qr-box');
+  box.innerHTML='';
+  try{
+    new QRCode(box,{text:window.location.href.split('#')[0],width:120,height:120,colorDark:'#0b1e3d',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.H});
+    qrDone=true;
+  }catch(e){}
+}
+
+/* ── EDIT MODAL ── */
+function openEdit(){
+  var cfg=getCfg();
+  document.getElementById('cfg-lat').value=cfg.lat;
+  document.getElementById('cfg-lon').value=cfg.lon;
+  document.getElementById('cfg-locname').value=cfg.locName;
+  document.getElementById('edit-modal').classList.add('show');
+}
+function closeEdit(){document.getElementById('edit-modal').classList.remove('show');}
+document.getElementById('edit-modal').addEventListener('click',function(e){if(e.target===this)closeEdit();});
+
+function saveConfig(){
+  var cfg=getCfg();
+  cfg.lat=parseFloat(document.getElementById('cfg-lat').value)||cfg.lat;
+  cfg.lon=parseFloat(document.getElementById('cfg-lon').value)||cfg.lon;
+  cfg.locName=document.getElementById('cfg-locname').value.trim()||cfg.locName;
+  localStorage.setItem(CFG_KEY,JSON.stringify(cfg));
+
+  var lt=document.getElementById('cfg-law-title').value.trim();
+  var lb=document.getElementById('cfg-law-body').value.trim();
+  if(lt&&lb){
+    var lawList=document.getElementById('phap-luat');
+    var items=lawList.querySelectorAll('.law-item');
+    var num=items.length+1;
+    var div=document.createElement('div');
+    div.className='law-item';
+    div.innerHTML='<div class="law-hdr" onclick="tgl(this)"><div class="law-num">'+num+'</div><div class="law-title">'+lt+'<span class="law-tag lt-blue">Mới thêm</span></div><svg class="law-chev" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></div><div class="law-body"><p>'+lb+'</p></div>';
+    lawList.appendChild(div);
+    document.getElementById('cfg-law-title').value='';
+    document.getElementById('cfg-law-body').value='';
+  }
+
+  var en=document.getElementById('cfg-em-name').value.trim();
+  var enum2=document.getElementById('cfg-em-num').value.trim();
+  var eh=document.getElementById('cfg-em-hint').value.trim();
+  if(en&&enum2){
+    var grids=document.querySelectorAll('#khan-cap .em-grid');
+    var grid=grids[grids.length-1];
+    var card=document.createElement('div');
+    card.className='em-card navy';
+    card.innerHTML='<span class="em-emoji">📞</span><div class="em-lbl">Mới thêm</div><div class="em-name">'+en+'</div><a class="em-num" href="tel:'+enum2.replace(/\D/g,'')+'">'+enum2+'</a><div class="em-hint">'+(eh||'Liên hệ khi cần')+'</div>';
+    grid.appendChild(card);
+    document.getElementById('cfg-em-name').value='';
+    document.getElementById('cfg-em-num').value='';
+    document.getElementById('cfg-em-hint').value='';
+  }
+
+  document.getElementById('windy-frame').src=
+    'https://embed.windy.com/embed2.html?lat='+cfg.lat+'&lon='+cfg.lon
+    +'&detailLat='+cfg.lat+'&detailLon='+cfg.lon
+    +'&width=860&height=300&zoom=7&level=surface&overlay=wind&product=ecmwf'
+    +'&menu=&message=true&marker=true&calendar=now&type=map&location=coordinates'
+    +'&detail=true&metricWind=km%2Fh&metricTemp=%C2%B0C';
+
+  closeEdit();
+  fetchWeather();
+}
+
+/* ── REFRESH ── */
+function updateTime(){document.getElementById('last-update').textContent=new Date().toLocaleTimeString('vi-VN',{hour:'2-digit',minute:'2-digit'});}
+async function refreshAll(){
+  var btn=document.getElementById('refresh-btn');
+  btn.classList.add('spin');
+  await fetchWeather();
+  btn.classList.remove('spin');
+}
+setInterval(fetchWeather, 30*60*1000);
+
+/* ── ONLINE/OFFLINE ── */
+function checkNet(){document.body.classList.toggle('offline',!navigator.onLine);}
+window.addEventListener('online',checkNet);
+window.addEventListener('offline',checkNet);
+checkNet();
+
+/* ── PWA INSTALL ── */
+var deferred=null;
+window.addEventListener('beforeinstallprompt',function(e){
+  e.preventDefault(); deferred=e;
+  document.getElementById('install-bar').classList.add('show');
+});
+document.getElementById('install-btn').addEventListener('click',function(){
+  if(!deferred) return;
+  deferred.prompt();
+  deferred.userChoice.then(function(){deferred=null;document.getElementById('install-bar').classList.remove('show');});
+});
+document.getElementById('install-close').addEventListener('click',function(){document.getElementById('install-bar').classList.remove('show');});
+window.addEventListener('appinstalled',function(){document.getElementById('install-bar').classList.remove('show');});
+
+/* ── INLINE SERVICE WORKER TẠO TỪ BLOB ── */
+if('serviceWorker' in navigator){
+  const swCode = `
+    const CACHE_NAME = 'camnangso-v1.1';
+    self.addEventListener('install', (event) => {
+      self.skipWaiting();
+    });
+    self.addEventListener('activate', (event) => {
+      event.waitUntil(
+        caches.keys().then((keys) => {
+          return Promise.all(
+            keys.map((key) => {
+              if (key !== CACHE_NAME) {
+                return caches.delete(key);
+              }
+            })
+          );
+        })
+      );
+      self.clients.claim();
+    });
+    self.addEventListener('fetch', (event) => {
+      if (event.request.url.includes('api.open-meteo.com') || event.request.url.startsWith('blob:')) {
+        return;
+      }
+      event.respondWith(
+        caches.match(event.request).then((cachedResponse) => {
+          const fetchPromise = fetch(event.request).then((networkResponse) => {
+            if (networkResponse && networkResponse.status === 200 && networkResponse.type === 'basic') {
+              const responseToCache = networkResponse.clone();
+              caches.open(CACHE_NAME).then((cache) => {
+                cache.put(event.request, responseToCache);
+              });
+            }
+            return networkResponse;
+          }).catch(() => {});
+          return cachedResponse || fetchPromise;
+        })
+      );
+    });
+  `;
+  const blob = new Blob([swCode], { type: 'application/javascript' });
+  const swUrl = URL.createObjectURL(blob);
+  navigator.serviceWorker.register(swUrl).then(() => {
+    console.log("Single-file Service Worker chạy thành công.");
+  }).catch((error) => {
+    console.log("Lỗi đăng ký Service Worker:", error);
+  });
+}
+
+/* ── HASH DEEP LINK ── */
+(function(){
+  var h=window.location.hash.replace('#','');
+  var tabs=['hai-van','phap-luat','khan-cap','gioi-thieu'];
+  if(tabs.includes(h)){
+    var btns=document.querySelectorAll('.bnav-item');
+    switchTab(h,btns[tabs.indexOf(h)]);
+  }
+})();
+
+/* ── INIT ── */
+initCounter();
+fetchWeather();
+</script>
+</body>
+</html>
